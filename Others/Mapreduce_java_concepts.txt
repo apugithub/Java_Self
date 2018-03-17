@@ -1,0 +1,9 @@
+Arrays
+Objects and Classes
+Control Flow Statements
+Inheritance and Interfaces
+Exception Handling
+Serialization
+Threads
+Collections(Highly used in Map-Reduce)
+Reading and Writing files(Highly Used in Map-reduce)

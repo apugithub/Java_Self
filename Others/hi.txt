@@ -1,0 +1,11 @@
+Cloudera manager AWS Login: 
+http://52.66.55.235:7180/cmf/login
+Username: read-user
+pass: read-user
+
+
+
+Why do I wake up with mysterious scratches in my body?
+
+http://www.tandurust.com/health-faq-8/mysterious-scratches-on-the-body.html
+https://www.quora.com/Why-do-I-wake-up-with-mysterious-scratches-in-my-body
