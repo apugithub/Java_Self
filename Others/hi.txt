@@ -1,3 +1,7 @@
+git config --global http.proxy <proxy IP:port>
+Example: git config --global http.proxy 10.227.151.50:6050
+
+
 Cloudera manager AWS Login: 
 http://52.66.55.235:7180/cmf/login
 Username: read-user
