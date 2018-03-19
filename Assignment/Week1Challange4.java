@@ -1,6 +1,43 @@
+//////////////////   Main Class   ////////////////////////
+
+import java.util.Scanner;
 
 
-//////////////////////////////////////////////////////////
+public class week1challange4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		Printer obj1 = new Printer();
+		obj1.getType("Multi-function");
+		obj1.getModel("HP");
+		obj1.getColorTechnology("Inkjet");
+		obj1.getPrintSpeed(150);
+		obj1.getTrayCapacity(2);
+		
+		Printer obj2 = new Printer();
+		Scanner bucky = new Scanner(System.in);
+		String TP = bucky.next();
+		String MD = bucky.next();
+		String CT = bucky.next();
+		String PS = bucky.next();
+		String TC = bucky.next();
+		System.out.println(obj2.getType(TP)+ " " + obj2.getType(MD)+" "+ obj2.getType(CT)+" " + obj2.getType(PS)
+				+" " + obj2.getType(TC));
+		
+		
+		
+		
+	}
+
+}
+
+
+
+
+
+///////////////////     Printer class  ///////////////////////////////////////
 
 
 public class Printer {
