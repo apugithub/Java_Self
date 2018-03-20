@@ -1,10 +1,9 @@
 //////////////////   Main Class   /////////////////////////
 
-import java.awt.DisplayMode;
 import java.util.Scanner;
 
 
-public class week1ch4 {
+public class week1challange4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -115,6 +114,12 @@ public class week1ch4 {
 			
 			display();
 			
+			if(obj1.equals(obj2))
+				System.out.println("Both the printers are the same");
+			else 
+				System.out.println("Both the printers are different");
+			System.out.println(obj1 + "  "+obj2);
+			
 		}
 		
 		
@@ -130,7 +135,7 @@ public class week1ch4 {
 				obj1.getTrayCapacity(2));
 	}
 	
-	
+	 
 	
 	
 }
@@ -144,7 +149,7 @@ public class week1ch4 {
 ///////////////////     Printer class  ///////////////////////////////////////
 
 
-public class Printer {
+ class Printer {
 	private String type;
 	private String model;
 	private String colorTechnology;
@@ -199,5 +204,26 @@ public class Printer {
         return type + " " + model + " " + colorTechnology + " " + printSpeed + " " +  trayCapacity ;
     }
 	
+	
+	public boolean equals(Object obj)
+    {
+        boolean isEqual = false;
+        if (this.getClass() == obj.getClass())
+        {
+            Printer myValueObject = (Printer) obj;
+            if ((myValueObject.type).equals(this.type) &&
+                    (myValueObject.model).equals(this.model) && 
+                    (myValueObject.colorTechnology).equals(this.colorTechnology) &&
+                    (myValueObject.printSpeed)==(this.printSpeed) &&
+                    (myValueObject.trayCapacity)==(this.trayCapacity)
+                    )
+            {
+                isEqual = true;
+            }
+        }
+
+        return isEqual;
+
+}
 	
 }
