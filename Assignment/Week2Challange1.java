@@ -3,10 +3,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import org.omg.CosNaming.NamingContextExtPackage.AddressHelper;
 
 
-public class week2ch1 {
+public class week2challange1 {
 
 	public static void main(String[] args)   throws IOException{
 		// TODO Auto-generated method stub
@@ -16,9 +15,9 @@ public class week2ch1 {
 		ArrayList<String> arr = new ArrayList<String>(n);
 		
 		for (int i =0 ; i<=n; i++) {
-			System.out.println(i);
+			  //System.out.println("sss" + i);
 			  arr.add(bucky.nextLine());
-			  System.out.println(i);
+			 
 		}
 		
 		//System.out.println("output");
