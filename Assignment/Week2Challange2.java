@@ -21,13 +21,13 @@ interface BankTransfers{
 		//System.out.println(Arrays.toString(arr));  //This Arrays.toString() actually prints all the array contents in a single line
 		String str = Arrays.toString(arr)
 		.replace(", ", "1").replace("[", "").replace("]", "");  //note the replace method and at first "comma and one space" getting replaced by null
-		System.out.println("The Encrypted message is : " +str);
+		
 				
-			return "a";
+			return str+1;
 	 }
 	 public String decrypt(String a){
-		 System.out.println("The Decrypted message is : "+a);
-		 return "a";
+		 
+		 return a;
 	 }
 	
 }
@@ -41,41 +41,46 @@ interface BankTransfers{
 			
 			char c = a.charAt(i);
 									
-		if(c!= ' ') {            ///This if loop is required to bypass the space characters as per requirement
+		if(!(c== ' ')) {            ///This if loop is required to bypass the space characters as per requirement
 			
 			if (i%2==0){
 
 				int j = c + 1;  // This is as per requirement (need to increase ASCII value by 1)
-				char k = (char) j;  //This converts the integer j into its corresponding ASCII value
+				char k =  (char) j;  //This converts the integer j into its corresponding ASCII value
 				arr[i] = k; 
 			       }
 			
-			else {
+			if(!(i%2==0))
+			{
 				int m = c-1;
 				char n = (char) m;
 				arr[i] = n;
 			    }
+			
 		
-			} 
+			}
+		else {
+			arr[i]=c;
+		}
 		}
 		
 			//System.out.println(Arrays.toString(arr));  //This actually prints all the array contents in a single line
 			String str = Arrays.toString(arr)
 					.replace(", ", "").replace("[", "").replace("]", "");
-			System.out.println("The Encrypted message is : " +str);
+			
 			
 		return str;
     }
 	 
 	 
 	 public String decrypt(String a){
-		 System.out.println("The Decrypted message is : "+a);
-		 return "a";
+		
+		 return a;
 	 }
 	
 	 
  }
-public class week2challange2 {
+public class Week2Challange2 {
 
 	public static void main(String[] args) {
 		
@@ -96,12 +101,12 @@ public class week2challange2 {
 			bucky.nextLine();
 			String str = bucky.nextLine();
 				if(bnk==1){
-				ic.encrypt(str);
-				ic.decrypt(str);
+					System.out.println("The Encrypted message is : " +ic.encrypt(str));
+					System.out.println("The Decrypted message is : "+ic.decrypt(str));
 			  }
 			  else {
-				hd.encrypt(str);
-				hd.decrypt(str);
+				  System.out.println("The Encrypted message is : "+hd.encrypt(str));	
+				  System.out.println("The Decrypted message is : "+hd.decrypt(str));			
 			      }
 			}
 		else {
