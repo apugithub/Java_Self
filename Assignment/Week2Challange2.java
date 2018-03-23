@@ -61,8 +61,8 @@ interface BankTransfers{
 		
 			//System.out.println(Arrays.toString(arr));  //This actually prints all the array contents in a single line
 			String str = Arrays.toString(arr)
-					.replace(", ", "").replace("[", "").replace("]", "").replace(" ", " ");
-			System.out.println(str);
+					.replace(", ", "").replace("[", "").replace("]", "");
+			System.out.println("The Encrypted message is : " +str);
 			
 		return str;
     }
@@ -75,7 +75,7 @@ interface BankTransfers{
 	
 	 
  }
-public class week2ch2 {
+public class week2challange2 {
 
 	public static void main(String[] args) {
 		
@@ -89,26 +89,24 @@ public class week2ch2 {
 		ICICI ic = new ICICI();
 		HDFC hd = new HDFC();
 		
-				
-		if (bnk ==1){
-			System.out.println("Enter the Message to Transfer");
-			String str = bucky.nextLine();
-			bucky.nextLine();
-			ic.encrypt(str);
-			ic.decrypt(str);
-		}
 		
-		if (bnk==2){
-			System.out.println("Enter the Message to Transfer");
-			String str = bucky.nextLine();
-			bucky.nextLine();
-			hd.encrypt(str);
-			hd.decrypt(str);
-		}
 		
-		if (bnk!=1 || bnk!=2)
+		if (bnk ==1 || bnk==2){
+			System.out.println("Enter the Message to Transfer");
+			bucky.nextLine();
+			String str = bucky.nextLine();
+				if(bnk==1){
+				ic.encrypt(str);
+				ic.decrypt(str);
+			  }
+			  else {
+				hd.encrypt(str);
+				hd.decrypt(str);
+			      }
+			}
+		else {
 			System.out.println("Invalid Type");
-
+			}
 	}
 	
 }
