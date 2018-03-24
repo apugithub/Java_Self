@@ -26,8 +26,19 @@ interface BankTransfers{
 			return str+1;
 	 }
 	 public String decrypt(String a){
-		 
-		 return a;
+   	  
+   	  char arr[] = new char[a.length()];
+		for(int i=0; i<a.length(); i++){
+			
+			char c = a.charAt(i);
+			int j = c-1;
+			char k = (char) j;
+			arr[i]=k; 
+		}
+		String str = Arrays.toString(arr);
+		String str1 = str.replace("[", "").replace("]","").replace(", ", "").replace("0","");
+		
+		return str1;
 	 }
 	
 }
@@ -75,12 +86,41 @@ interface BankTransfers{
 	 
 	 public String decrypt(String a){
 		
-		 return a;
+
+   	  char arr[] = new char[a.length()];
+		for(int i=0; i<a.length(); i++){
+			
+			char c = a.charAt(i);
+			
+			if(c!= ' '){
+				if(i%2==0){
+					int j =c-1;
+					char k =(char) j;
+					arr[i]= k; 
+				}
+				
+
+   			if(!(i%2==0))
+   			{
+   				int m = c+1;
+   				char n = (char) m;
+   				arr[i] = n;
+   			    } 
+   			}
+   		else {
+					arr[i]=c; 
+				}	
+			}
+		
+		String str = Arrays.toString(arr);
+		String str1 = str.replace("[", "").replace("]","").replace(", ", "");
+		
+		return str1;
 	 }
 	
 	 
  }
-public class Week2Challange2 {
+public class week2challange2 {
 
 	public static void main(String[] args) {
 		
@@ -98,20 +138,22 @@ public class Week2Challange2 {
 		
 		if (bnk ==1 || bnk==2){
 			System.out.println("Enter the Message to Transfer");
-			bucky.nextLine();
+			bucky.nextLine(); //This is required because after selecting bank we are giving ENTER, 
+			                  //which needs to be bypassed, and then we will give the actual string
 			String str = bucky.nextLine();
 				if(bnk==1){
 					System.out.println("The Encrypted message is : " +ic.encrypt(str));
-					System.out.println("The Decrypted message is : "+ic.decrypt(str));
+					System.out.println("The Decrypted message is : "+ic.decrypt(ic.encrypt(str)));
 			  }
 			  else {
 				  System.out.println("The Encrypted message is : "+hd.encrypt(str));	
-				  System.out.println("The Decrypted message is : "+hd.decrypt(str));			
+				  System.out.println("The Decrypted message is : "+hd.decrypt(hd.encrypt(str)));			
 			      }
 			}
 		else {
 			System.out.println("Invalid Type");
 			}
+		bucky.close();
 	}
 	
 }
