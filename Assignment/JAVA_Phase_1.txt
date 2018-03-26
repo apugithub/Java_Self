@@ -5,4 +5,6 @@ https://digitaluniversity.cognizant.e-box.co.in
 
 Challange 1 Reference:  https://ideone.com/Ziwf7N
 
- 
+**week3ch1 ref:
+http://tutorials.jenkov.com/java-util-concurrent/blockingqueue.html
+https://www.journaldev.com/1034/java-blockingqueue-example
