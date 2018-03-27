@@ -1,3 +1,5 @@
+import java.util.Scanner;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 class ConsumerThread extends Thread{
@@ -8,31 +10,53 @@ class ConsumerThread extends Thread{
 		 this.queue = queue;
 		 this.numberOfElements = numberOfElements;
 	 }
-}
+	 
+	 public void run() {
+	      int value = 0;
+	      try {
+	    	  for (int i=0 ; i< numberOfElements; i++)
+	    	  System.out.println("Consume value: "+queue.take());
+			
+		} catch (InterruptedException  e) {
+			e.printStackTrace();
+		}
 
+	         
+	 }
+	 
+ }
+////////////////////////////////////////////////////////////////////////////
 class ProducerThread extends Thread{
 	 BlockingQueue queue;
 	 int numberOfElements;
 	 
-	 public void run() {
-	      int value = 0;
-	      for (int i = 0; i < 10; i++){
-	    	  System.out.println("Enter the input: ");
-	      }
-	         
-	      }
 	 
 	 ProducerThread(BlockingQueue queue, int numberOfElements ){
 		 this.queue = queue;
 		 this.numberOfElements = numberOfElements;
 	 }
 	
+	 public void run() {
+	      int value = 0;
+	      try {
+	    	  for (int i=0 ; i< numberOfElements; i++)
+	    		  queue.put(i);
+			
+		} catch (InterruptedException  e) {
+			e.printStackTrace();
+		}
+
+	         
+	      }
 }
 
-class week3ch1 {
+class week3challange1 {
 	  public static void main(String args[]){  
-		  BlockingQueue queue = null;
-		 int numberOfElements = 0;
+		  BlockingQueue queue = new ArrayBlockingQueue<>(1024);
+		 //int numberOfElements = 0;
+		 
+		 Scanner bucky = new Scanner(System.in);
+		 int numberOfElements = bucky.nextInt();
 
 		  
 		  ConsumerThread consumer = new ConsumerThread(queue, numberOfElements);
