@@ -66,4 +66,4 @@ class contact {
 		return name + mobileNumber;
 	}
 	
-}
+}  
