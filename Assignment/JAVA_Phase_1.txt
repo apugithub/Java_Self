@@ -9,3 +9,7 @@ Challange 1 Reference:  https://ideone.com/Ziwf7N
 http://tutorials.jenkov.com/java-util-concurrent/blockingqueue.html
 https://www.journaldev.com/1034/java-blockingqueue-example
 https://www.tutorialspoint.com/javaexamples/thread_procon.htm
+
+
+**week3ch3 ref:
+https://stackoverflow.com/questions/42020261/getting-error-when-finding-frequency-of-characters-in-string-using-tree-map-in-j
