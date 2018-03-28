@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> 25de40165d5745faea9891caed34e17a1be0260a
 import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

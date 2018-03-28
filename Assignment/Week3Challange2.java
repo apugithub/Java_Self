@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> 25de40165d5745faea9891caed34e17a1be0260a
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -69,8 +66,8 @@ class contact {
 		return name + mobileNumber;
 	}
 	
-<<<<<<< HEAD
+
 }  
-=======
+
 }  
->>>>>>> 25de40165d5745faea9891caed34e17a1be0260a
+
