@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 25de40165d5745faea9891caed34e17a1be0260a
 import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -59,7 +63,7 @@ class week3challange1 {
 		 int numberOfElements = bucky.nextInt();
 
 		  
-		  ConsumerThread consumer = new ConsumerThread(queue, numberOfElements);
+		  ConsumerThread consumer = new ConsumerThread(queue, numberOfElements);  
 		  ProducerThread producer = new ProducerThread(queue, numberOfElements);
 		  consumer.start();
 		  producer.start();
