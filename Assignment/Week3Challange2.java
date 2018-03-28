@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,8 +6,9 @@ public class week3ch2 {
 	
 	public static void main (String[] args){
     
+		int check = 0;
 	Scanner bucky = new Scanner(System.in);
-	ArrayList<contact> san = new ArrayList<contact>();
+	ArrayList<contact> san = new ArrayList<contact>();  // Creating ArrayList 'san' of 'contact' method
 	System.out.println("Enter number of contacts:");
 	int a = bucky.nextInt();
 	for (int i=1; i<=a;i++){
@@ -16,7 +16,7 @@ public class week3ch2 {
 		System.out.println("Enter Contact Name");
 		String s1 =bucky.next();
 		System.out.println("Enter Mobile Number");
-		int b = bucky.nextInt();
+		String b = bucky.next();
 		bucky.nextLine();
 		san.add(new contact(s1, b));
 	}
@@ -24,23 +24,39 @@ public class week3ch2 {
 		String s2 = bucky.next();
 		
 		for (int i=0; i<san.size(); i++){
-			if(  (san.get(i).getName()).equals(s2)  ){
-			System.out.println("Contact Name:"+san.get(i).getName());
-			System.out.println("Contact Mobile Number:"+ san.get(i).getmobileNumber());
-		  }
+			
+			if(  (san.get(i).getName()).equals(s2)  )
+			   {
+				System.out.println("Contact Name:"+san.get(i).getName());
+				System.out.println("Contact Mobile Number:"+ san.get(i).getmobileNumber());
+				check =1;
+				break;
+				}
+
+			/*if(i==san.size()-1)
+				{
+					System.out.println("Contact not found");
+				} */
+			}
+		
+	if(check == 0)                 ///This can also be achieved with the help of above commented out if loop inside FOR loop
+			System.out.println("Contact not found");
+		bucky.close();
+	}
+
 		}
-
-    //System.out.println(san);  
-
+		
+    //System.out.println(san);
+  
     
-   }
-}
+ 
+
 
 class contact {
 	private String name;
-	private int mobileNumber;
+	private String mobileNumber;
 	
-	contact(String name, int mobileNumber) {
+	contact(String name, String mobileNumber) {
 		this.name = name;
 		this.mobileNumber = mobileNumber;
 	}  
@@ -54,20 +70,16 @@ class contact {
 			return name;
 		}
 		
-	 public int setmobileNumber(int mobileNumber){
+	 public String setmobileNumber(String mobileNumber){
 			return mobileNumber;
 		}  
 	
-	public int getmobileNumber(){
+	public String getmobileNumber(){
 		return mobileNumber;
 	} 
 	
-	public String toString(){
+	public String toString(){       //This toString method override is required by 'san' arraylist
 		return name + mobileNumber;
 	}
 	
-
-}  
-
-}  
-
+}
